@@ -1,7 +1,12 @@
 require 'test_helper'
 
 class ProductTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "product attributes must not be empty" do
+    product = Product.new(title: product(:ruby).title,
+                          description: 'hukbuk jbuk bubkub ubuyguy',
+                          price: 1,
+                          image_url: 'huuk.jpeg')
+    assert product.invalid?
+    assert_equal ["has already been taken"], product.errors[:title]
+  end
 end
