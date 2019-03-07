@@ -13,7 +13,7 @@
           <dl>
             <dt><%= product.title %></dt>
             <dt><%= truncate(strip_tags(product.description), length: 80) %></dt>
-            <dt><%= product.price %></dt>
+            <dt class="price"><%= product.price %></dt>
           </dl>
         </td>
         <td class="list_action" ><%= link_to 'Show', product %><br>
